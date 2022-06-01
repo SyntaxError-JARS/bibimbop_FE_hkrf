@@ -11,7 +11,7 @@ export default function NavBar(){
 <Link to="/">Home Page</Link>
 <span>  </span>
 
-<Link to="/login">Login</Link>
+<Link to="/register">Register/Log In</Link>
 <span>  </span>
 
 <Link to="/menu">Menu</Link>
