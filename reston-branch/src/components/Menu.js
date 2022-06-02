@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from "react";
 
+
 function Menu() {
   const [menuBody, setMenuBody] = useState([]);
 
@@ -10,7 +11,9 @@ function Menu() {
 
   async function viewAll(){
       try{
-          const response = await fetch("http://localhost:8080/bibimbop/menu");
+
+        
+          const response = await fetch("https://bibimbop.azurewebsites.net/menu");
           const menu = await response.jason();
           const menuTableRows = menu.map((e) => {
               return (

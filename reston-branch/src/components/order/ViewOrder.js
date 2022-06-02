@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 
-export default function Orders(){
+export default function ViewOrders(){
 
     const [ordersBody, setOrdersBody] = useState([]);
 
     useEffect(() => {
-        findAll();
+        viewAll();
     }, []);
 
     async function viewAll(){

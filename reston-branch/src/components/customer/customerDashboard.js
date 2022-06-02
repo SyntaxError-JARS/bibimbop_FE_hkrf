@@ -1,13 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-function customerDashboard() {
+function CustomerDashboard() {
+    const navigate = useNavigate ();
+
   return (
     <div>
       <h1>Welcome to your dashboard!</h1>
-      <Link to = "/order">Veiw and start new orders</Link>
+      <Link to = "/order"><button>Veiw and start new orders</button></Link>
+      <button onClick={() => navigate("/update")}>Update Account</button>
     </div>
   )
 }
 
-export default customerDashboard
+export default CustomerDashboard
