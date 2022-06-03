@@ -1,7 +1,11 @@
+import React from "react";
 import { useRef } from "react";
 import axios from "axios";
+import { Navigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export default function CreditCard(){
+
 
 
 const ccNumberInput = useRef();
@@ -27,7 +31,7 @@ const user = {};
     };
 
       try{
-      const response = await axios.post('url', {method:"POST", body: JSON.stringify(user)})
+      const response = await axios.post('https://bibimbop.azurewebsites.net/creditCard', user)
       console.log(response.data);
       } 
       catch (error){console.error(error.response.data);
@@ -36,16 +40,21 @@ const user = {};
 
 return(
 
+
+
     <React.Fragment>
     <h4>Hello, new customer please enter payment information below.</h4>
     <input placeholder="ccNumber" ref={ccNumberInput}></input>
     <input placeholder="ccName" ref={ccNameInput}></input>
     <input placeholder="cvv" ref={cvvInput}></input>
-    <input placeholder="expDate" ref={expDateINput}></input>
+    <input placeholder="expDate" ref={expDateInput}></input>
     <input placeholder="zip" ref={zipInput}></input>
     <input placeholder="limits" ref={limitsInput}></input>
     <input placeholder="customerUsername" ref={customerUsernameInput}></input>
     <button onClick={register}>Add Payment</button>
+    <Link to="/updatecreditcard">
+    <button>Update Payment Information</button>
+    </Link>
     </React.Fragment> 
 
 )

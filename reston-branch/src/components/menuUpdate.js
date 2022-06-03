@@ -13,9 +13,8 @@ export default function MenuUpdate() {
         }
         
         try{
-        const response = await axios.post(`${url}/menu/menuupdate` , menu)
-        // balance = 0;
-        // isAdmin = false;
+        const response = await axios.post('https://bibimbop.azurewebsites.net/' , menu)
+        
         console.log(response)
         } catch(error){
             console.error(error.response.data)

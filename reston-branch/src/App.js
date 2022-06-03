@@ -12,7 +12,8 @@ import CustomerDashboard from "./components/customer/customerDashboard";
 import CustomerUpdate from "./components/customer/Customer-Update";
 import Order from "./components/order/Order";
 import ViewOrders from "./components/order/ViewOrder";
-
+import CreditCard from "./components/creditcard/creditCard";
+import UpdateCreditCard from "./components/creditcard/updateCreditCard";
 
 //react uses a virtual dom, what it does is it renders a virtual and compares to the actual dom
 function App() {
@@ -30,6 +31,8 @@ function App() {
     <Route path="login" element={<CustomerLogin />} />
     <Route path="vieworders" element={<ViewOrders />} />
     <Route path="order" element={<Order />} />
+    <Route path="creditcard" element={<CreditCard />} />
+    <Route path="updatecreditcard" element={<UpdateCreditCard />} />
   </Routes>
   <Footer />
 </BrowserRouter>
