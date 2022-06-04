@@ -18,7 +18,7 @@ export default function CustomerLogin(){
         };
         
               try{
-              const response = await axios.post('http://localhost:8080/bibimbop/customer/auth', {method:"POST", body: JSON.stringify(user)})
+              const response = await axios.post('https://bibimbop.azurewebsites.net/auth', user)
               console.log(response.data);
               navigate("/dashboard");
               } 
@@ -34,8 +34,10 @@ export default function CustomerLogin(){
             {/* the above react.fragment allows you to return under a single parent tag that isnt impacted by the html structure and styling*/}
             <h4>Welcome back, please log in below.</h4>
             <input placeholder="Enter Username" ref={customerUsernameInput}></input>
+            <br></br>
             <input type="password" placeholder="Enter Password" ref={passwordInput}></input>
-            <button on onClick={login}>Login</button>
+            <br></br>
+            <button on onClick={login}>Log In</button>
             
            
         </React.Fragment>        

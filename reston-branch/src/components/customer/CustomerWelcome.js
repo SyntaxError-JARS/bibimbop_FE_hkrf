@@ -14,7 +14,7 @@ function CustomerWelcome() {
          <h1>Welcome to BibimBop</h1>
      <p>Korean Cuisine</p>
      <h3>{location}</h3>
-     <Link to="/menu">
+     <Link to="/order">
      <button>ORDER NOW</button>
      </Link>
      </div>

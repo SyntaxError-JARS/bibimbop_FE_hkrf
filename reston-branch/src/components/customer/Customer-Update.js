@@ -43,16 +43,22 @@ const user = {
 
 return(
 
-    <React.Fragment>
+    <>
     <h4>Hello, Update account below.</h4>
     <input placeholder="Update Username" ref={customerUsernameInput}></input>
+    <br></br>
     <input placeholder="Update First Name" ref={fNameInput}></input>
+    <br></br>
     <input placeholder="Update Last Name" ref={lNameInput}></input>
+    <br></br>
     <input type= "password" placeholder="Update Password" ref={passwordInput}></input>
+    <br></br>
     <input placeholder="Update Balance" ref={balanceInput}></input>
+    <br></br>
     <input placeholder="Are you an Admin" ref={isAdminInput}></input>
+    <br></br>
     <button onClick={update}>Update Account</button>
-    </React.Fragment>   
+    </>   
 
 )
 
