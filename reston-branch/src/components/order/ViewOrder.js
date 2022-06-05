@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function ViewOrders(){
 
     const [ordersBody, setOrdersBody] = useState([]);
+    const navigate = useNavigate ();
 
     useEffect(() => {
         viewAll();
@@ -10,7 +12,7 @@ export default function ViewOrders(){
 
     async function viewAll(){
         try{
-            const response = await fetch("http://localhost:8080/bibimbop/order");
+            const response = await fetch("https://bibimbop.azurewebsites.net/");
             const orders = await response.jason();
             const orderTableRows = orders.map((e) => {
                 return (
@@ -46,6 +48,7 @@ export default function ViewOrders(){
             </thead>
             <tbody>{ordersBody}</tbody>
         </table>
+        <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
         </>
     )
 

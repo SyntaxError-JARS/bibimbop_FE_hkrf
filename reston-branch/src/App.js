@@ -7,13 +7,14 @@ import CustomerRegister from "./components/customer/customer-register";
 import CustomerWelcome from "./components/customer/CustomerWelcome";
 import NavBar from "./components/navbar";
 import Footer from "./components/Footer";
-import Menu from "./components/Menu";
+import Menu from "./components/menu/Menu";
 import CustomerDashboard from "./components/customer/customerDashboard";
 import CustomerUpdate from "./components/customer/Customer-Update";
 import Order from "./components/order/Order";
 import ViewOrders from "./components/order/ViewOrder";
 import CreditCard from "./components/creditcard/creditCard";
 import UpdateCreditCard from "./components/creditcard/updateCreditCard";
+import CustomerDelete from "./components/customer/customerDelete";
 
 //react uses a virtual dom, what it does is it renders a virtual and compares to the actual dom
 function App() {
@@ -33,6 +34,7 @@ function App() {
     <Route path="order" element={<Order />} />
     <Route path="creditcard" element={<CreditCard />} />
     <Route path="updatecreditcard" element={<UpdateCreditCard />} />
+    <Route path="delete" element={<CustomerDelete />} />
   </Routes>
   <Footer />
 </BrowserRouter>

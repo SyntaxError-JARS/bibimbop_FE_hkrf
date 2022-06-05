@@ -1,8 +1,10 @@
 import React from 'react'
 import { useEffect, useState } from "react";
-
+import { useNavigate } from 'react-router-dom';
 
 function Menu() {
+
+  const navigate = useNavigate();
   const [menuBody, setMenuBody] = useState([]);
 
   useEffect(() => {
@@ -47,6 +49,7 @@ function Menu() {
           </thead>
           <tbody>{menuBody}</tbody>
       </table>
+      <button onClick={() => navigate("/order")}>Order Now</button>
       </div>
       </>
   )

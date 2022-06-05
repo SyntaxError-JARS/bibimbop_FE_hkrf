@@ -10,36 +10,34 @@ export default function CustomerRegistration() {
     const lnameInput = useRef();
     const usernameInput = useRef();
     const passwordInput = useRef();
-    //const balanceInput = useRef();
-    // const isAdmin = false;
-    // const customer = {
-    //     fname: "Romane",
-    //     lname: "Robb",
-    //     username: "romanerobb",
-    //     password: "passwordrobb",
-    //     balance:  10,
-    //     isAdmin: false
-    // }
+    const balanceInput = useRef();
+    const isAdminInput = useRef();
+  
+
     const url = "https://bibimbop.azurewebsites.net/"
     async function customerReg(){
+        
         const customer = {
     customerUsername: usernameInput.current.value,
     fName: fnameInput.current.value,
     lName: lnameInput.current.value,
     password: passwordInput.current.value,
-            balance: 0,
-            isAdmin: false
+    balance: balanceInput.current.value,
+    isAdmin: isAdminInput.current.value,
         }
+       
+       if (customer.isAdmin == "1"){
+        return navigate("/admin");
+    }
         if (customer.password === "") {
             alert("You have failed to enter a password! Please try again!");
         if (customer.username === "")
                 alert("You have failed to enter a username! Please try again!");
         }else navigate("/dashboard");
+
         try{
         const response = await axios.post(`${url}/customer` , customer)
-        // balance = 0;
-        // isAdmin = false;
-        console.log(response)
+        console.log(response.data)
         } catch(error){
             console.error(error.response.data)
             console.log(error)
@@ -52,16 +50,22 @@ export default function CustomerRegistration() {
         <br></br>
         <input placeholder="Enter Username" ref={usernameInput}></input>
         <br></br>
-        <br></br>
+        
         <input placeholder="Enter First Name" ref={fnameInput}></input>
         <br></br>
-        <br></br>
+        
         <input placeholder="Enter Last Name" ref={lnameInput}></input>
         <br></br>
-        <br></br>
+        
         <input type="password" placeholder="Enter password" ref={passwordInput}></input>
         <br></br>
+        
+        <input placeholder="Enter Balance" ref={balanceInput}></input>
         <br></br>
+        
+        <input placeholder="Are you an Admin" ref={isAdminInput}></input>
+        <br></br>
+       
         <button type="button" class="btn btn-outline-warning btn-lg" onClick={customerReg}>Register</button>
         <br></br>
        <Link to="/login"> <button>Log In</button>  </Link>

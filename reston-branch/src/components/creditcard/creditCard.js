@@ -1,12 +1,12 @@
 import React from "react";
 import { useRef } from "react";
 import axios from "axios";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 export default function CreditCard(){
 
-
+const navigate = useNavigate ();     
 
 const ccNumberInput = useRef();
 const ccNameInput = useRef();
@@ -52,9 +52,8 @@ return(
     <input placeholder="limits" ref={limitsInput}></input>
     <input placeholder="customerUsername" ref={customerUsernameInput}></input>
     <button onClick={register}>Add Payment</button>
-    <Link to="/updatecreditcard">
-    <button>Update Payment Information</button>
-    </Link>
+    <button onClick={() => navigate("/updatecreditcard")}>Update Payment Information</button>
+    <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
     </React.Fragment> 
 
 )

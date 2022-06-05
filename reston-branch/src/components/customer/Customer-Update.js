@@ -31,9 +31,9 @@ const user = {
 };
 
       try{
-      const response = await axios.post('https://bibimbop.azurewebsites.net/', user)
+      const response = await axios.post('https://bibimbop.azurewebsites.net/customer', user)
       console.log(response.data);
-      navigate("/update");
+      navigate("/dashboard");
       } 
       catch (error){
           console.error(error.response.data);
@@ -58,6 +58,7 @@ return(
     <input placeholder="Are you an Admin" ref={isAdminInput}></input>
     <br></br>
     <button onClick={update}>Update Account</button>
+    <button onClick={() => navigate("/dashboard")}>Back to Dashboard</button>
     </>   
 
 )
